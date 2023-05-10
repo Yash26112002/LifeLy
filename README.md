@@ -1,5 +1,5 @@
 ﻿# LifeLy-CODEX
- ####To start with the development
+ #### To start with the development
  1. Fork this repositry.
  2. Clone it using "git clone https://github.com/{your-username}/LifeLy-CODEX.git"
  3. Add you .env file in /server folder.
@@ -16,7 +16,7 @@
  9. Continue Development.
 
 
-####To continue with development
+#### To continue with development
 1. Create a branch in your local repositry by git checkout -b <branch-name> ( not necessary for this project)
 2. Continue working in that one particular branch for one particular feature or one particular class of features. (not necessary for this project)
 3. After making necessary changes, use git add .
