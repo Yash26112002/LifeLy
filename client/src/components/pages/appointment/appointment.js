@@ -58,23 +58,23 @@ export default function Appointment(props) {
                 <div className="appleftside">
                     <div className="doctorname">
                         <div className="doctornameleftside">Doctor's name</div>
-                        <div className="doctornameleftside bdclass">{props.name}</div>
+                        <div className="doctornameleftside bdclass">{data.Name}</div>
                     </div>
                     <div className="doctorname">
                         <div className="doctornameleftside">Doctor's phone number</div>
-                        <div className="doctornameleftside bdclass">{props.number}</div>
+                        <div className="doctornameleftside bdclass">{data['Phone Number']}</div>
                     </div>
                     <div className="doctorname">
                         <div className="doctornameleftside">Fees</div>
-                        <div className="doctornameleftside bdclass">{props.fees}</div>
+                        <div className="doctornameleftside bdclass">{data.Fee}</div>
                     </div>
                     <div className="doctorname">
                         <div className="doctornameleftside">Discount</div>
-                        <div className="doctornameleftside bdclass">{props.dsct}%</div>
+                        <div className="doctornameleftside bdclass">{data.Discount}%</div>
                     </div>
                     <div className="doctorname">
                         <div className="doctornameleftside">Total Fees</div>
-                        <div className="doctornameleftside bdclass">{props.tfees}</div>
+                        <div className="doctornameleftside bdclass">{data['Discounted Fee']}</div>
                     </div>
                 </div>
                 <img src={appoint} alt="" />

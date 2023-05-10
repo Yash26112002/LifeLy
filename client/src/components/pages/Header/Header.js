@@ -33,6 +33,9 @@ const Header = () => {
         <Link style={{ color: 'black', textDecoration: 'none' }} to='/survey'>
           Survey
         </Link>
+        <Link style={{ color: 'black', textDecoration: 'none' }} to='/review'>
+          Add a review
+        </Link>
         <a href='#contact'>Contact Us</a>
       </div>
       <div className='buttons'>

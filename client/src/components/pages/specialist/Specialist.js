@@ -25,16 +25,16 @@ export default function Specialist(props) {
       setDoctors(res.data);
     });
   }
-  console.log(doctors)
 
   useEffect(() => {
     if (selectedCity && disease) {
       findDoctors();
     }
   }, [selectedCity, disease]);
+  console.log(doctors)
 
   const appointment = (doctor) => {
-    navigate('/appointment',{state:doctor});
+    navigate('/appointment',{state:{data:doctor}});
   }
 
   return (
@@ -65,14 +65,15 @@ export default function Specialist(props) {
             <button className="btnl" onClick={findDoctors}>Find</button>
          </div>
       </div>
-      <div className="cards" onClick={appointment}>
-        {doctors.map(doctor => (
-          <div className="card" key={doctor.Name}>
-            <div className="upperpart"><img src={doc} /></div>
-            <div className="lowerpart"><span>{doctor.Name}</span><span>{doctor.State}</span> </div>
-          </div>
-        ))}
-      </div>
+      <div className="cards">
+  {doctors.map(doctor => (
+    <div className="card" key={doctor.Name} onClick={() => appointment(doctor)}>
+      <div className="upperpart"><img src={doc} /></div>
+      <div className="lowerpart"><span>{doctor.Name}</span><span>{doctor.State}</span></div>
+    </div>
+  ))}
+</div>
+
     </>
   );
 }

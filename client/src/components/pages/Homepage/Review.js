@@ -10,6 +10,7 @@ const Review = () => {
 
   useEffect(() => {
     async function fetchReviews() {
+
       const response = await axios.get(`${SERVER_URL}/review/get`);
       setReviews(response.data);
     }
