@@ -248,5 +248,8 @@ box-shadow: 0 4px 0 lightgray;
 font-family: Alegreya;
 }
   
-  
+.toast {
+  font-size: 1.2em;
+  padding: 15px;
+}
   

@@ -9,7 +9,9 @@ import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { SERVER_URL } from '../../../config.js';
 import { useNavigate } from 'react-router-dom'
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 export default function YourReport(props) {
   const navigate = useNavigate()
@@ -28,10 +30,19 @@ export default function YourReport(props) {
 
 
   const sendNewsletter = () => {
+    // show toast message to user
+  const toast = document.createElement('div');
+  toast.classList.add('toast');
+  toast.textContent = 'You have subscribed to the newsletter!';
+  document.body.appendChild(toast);
+  setTimeout(() => {
+    document.body.removeChild(toast);
+  }, 6000);
     axios.post(`${SERVER_URL}/send_email/newsletter`, user).then(res => {
       alert("Subscribed..Check your email!")
       console.log(res.data)
     })
+    
   }
 
 
@@ -53,7 +64,7 @@ export default function YourReport(props) {
   else if (t === data.autism_percent) {
     lines = arr2;
     disease = "Autism"
-    dis = "adhd"
+    dis = "autism"
   }
   else {
     lines = arr3;
@@ -131,6 +142,7 @@ export default function YourReport(props) {
               name='login' className="subbtn"></input>
           </div>
         </div>
+        <ToastContainer />
       </div>
       {/* <div><h2>yash</h2></div> */}
     </>
