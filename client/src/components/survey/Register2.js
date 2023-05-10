@@ -5,9 +5,9 @@ import myimage from "../../images/survey_img.png";
 import "./style.css";
 import Header from "../pages/Header/Header.js";
 import Footer from "../pages/Footer/Footer";
-import axios from 'axios'
-import { SERVER_URL } from '../../config.js';
-import {  useNavigate } from 'react-router-dom'
+import axios from "axios";
+import { SERVER_URL } from "../../config.js";
+import { useNavigate } from "react-router-dom";
 
 // import Option from "./Survey.js";
 // const navigate = useNavigate()
@@ -53,7 +53,7 @@ const RadioInput = ({
   );
 };
 export default function Survey(props) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   document.body.style.zoom = "70%";
   const location = useLocation();
@@ -74,22 +74,22 @@ export default function Survey(props) {
   const [question28, setquestion28] = React.useState();
   const [question29, setquestion29] = React.useState();
   const [question30, setquestion30] = React.useState();
-  const [res1,setRes1]=useState(results);
+  const [res1, setRes1] = useState(results);
   const handleSubmit = (e) => {
     e.preventDefault();
-    try{
-      setRes1(results)
-      console.log(results)
+    try {
+      setRes1(results);
+      console.log(results);
       const result = {
-        "result":results
-      }
-      console.log(result)
-      axios.post(`${SERVER_URL}/predict/percentage`,result).then(res=>{
-        console.log(res)
-        navigate('/surveyresult', { state: res.data}, );
-      })
-    }catch(err){
-      console.log(err)
+        result: results,
+      };
+      console.log(result);
+      axios.post(`${SERVER_URL}/predict/percentage`, result).then((res) => {
+        console.log(res);
+        navigate("/surveyresult", { state: res.data });
+      });
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -107,10 +107,11 @@ export default function Survey(props) {
             </div>
           </div>
         </div>
-        <form >
+        <form>
           <div>
             <p>
-              21. Does he find it difficult to work out people’s intentions ?
+              21.Does your child ever say that words “wiggle” or “shimmer” on
+              the page while he’s reading? ?
             </p>
             <RadioInput
               label="Definitely Agree"
@@ -151,7 +152,8 @@ export default function Survey(props) {
           </div>
           <div>
             <p>
-              22. Does he find it difficult to work out people’s intentions ?
+              22.Does your child complain of headaches, stomachaches, or
+              dizziness when reading ?
             </p>
             <RadioInput
               label="Definitely Agree"
@@ -192,7 +194,8 @@ export default function Survey(props) {
           </div>
           <div>
             <p>
-              23. Does he find it difficult to work out people’s intentions ?
+              23. Does your child spell inconsistently, misspelling words she
+              already knows ?
             </p>
             <RadioInput
               label="Definitely Agree"
@@ -233,7 +236,8 @@ export default function Survey(props) {
           </div>
           <div>
             <p>
-              24. Does he find it difficult to work out people’s intentions ?
+              24. Does your child have difficulty sustaining attention ? Does
+              she space out or get labeled a “daydreamer” ?
             </p>
             <RadioInput
               label="Definitely Agree"
@@ -274,7 +278,8 @@ export default function Survey(props) {
           </div>
           <div>
             <p>
-              25. Does he find it difficult to work out people’s intentions ?
+              25. Is your child of average or above-average intelligence, but
+              seems unable to read at her grade level?
             </p>
             <RadioInput
               label="Definitely Agree"
@@ -315,7 +320,8 @@ export default function Survey(props) {
           </div>
           <div>
             <p>
-              26. Does he find it difficult to work out people’s intentions ?
+              26. Does your child struggle with word problems — even though he’s
+              otherwise good at math?
             </p>
             <RadioInput
               label="Definitely Agree"
@@ -356,7 +362,8 @@ export default function Survey(props) {
           </div>
           <div>
             <p>
-              27. Does he find it difficult to work out people’s intentions ?
+              27. Does your child struggle to copy letters, numbers, or symbols
+              ?
             </p>
             <RadioInput
               label="Definitely Agree"
@@ -397,7 +404,8 @@ export default function Survey(props) {
           </div>
           <div>
             <p>
-              28. Does he find it difficult to work out people’s intentions ?
+              28. Does your child avoid reading altogether, or does she get
+              easily frustrated when completing reading-related assignments ?
             </p>
             <RadioInput
               label="Definitely Agree"
@@ -438,7 +446,8 @@ export default function Survey(props) {
           </div>
           <div>
             <p>
-              29. Does he find it difficult to work out people’s intentions ?
+              29.Does your child have difficulty budgeting her time or following
+              a schedule ?
             </p>
             <RadioInput
               label="Definitely Agree"
@@ -479,7 +488,8 @@ export default function Survey(props) {
           </div>
           <div>
             <p>
-              30. Does he find it difficult to work out people’s intentions ?
+              30. When reading out loud, does your child repeat words, mix up
+              letters, or change word order without noticing ?
             </p>
             <RadioInput
               label="Definitely Agree"
@@ -520,14 +530,12 @@ export default function Survey(props) {
           </div>
 
           <input
-            type='button'
+            type="button"
             style={{ textDecoration: "none" }}
             className="btn btn-primary btn-lg sub_btn"
             value="Submit"
             onClick={handleSubmit}
-          >
-           
-          </input>
+          ></input>
         </form>
       </div>
       <Footer></Footer>

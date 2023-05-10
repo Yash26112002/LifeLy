@@ -9,7 +9,7 @@ function App() {
   // Function to collect data
   const getApiData = async () => {
     const response = await fetch(
-      "https://justcors.com/tl_444243a/http://www.currentdiary.com/school/school-api/"
+      "https://justcors.com/tl_8efa0ea/http://www.currentdiary.com/school/school-api/"
     ).then((response) => response.json());
 
     setUsers(response);
